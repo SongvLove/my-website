@@ -23,10 +23,10 @@
                         <div class="hexagon_img"></div>
                         <!-- <img src="src/image/back_image/wallhaven-nkjxe6.png" alt="top_back" width="500" height="200" class="hexagon_img"> -->
                     </div>
-                    <div class="resume_adj_text">
+                    <span id="resume_adj_text">
                         PERSONAL
-                    </div>
-                    <div class="resume_text">
+                    </span>
+                    <div id="resume_text">
                         RESUME
                     </div>
                     <div class="introduce_module">
@@ -64,7 +64,6 @@
                         </div>
                     </div>
                     <div class="triangle_module">
-                        <!-- <img src="src/image/back_image/wallhaven-w8j226.jpg" width="300" height="300" > -->
                         <div class="triangle_image_desc_fir">
                             <img class="image_info" height="300" src="src/image/back_image/wallhaven-gjj5ol.jpg" width="300">
                             </img>
@@ -109,4 +108,18 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript">  
+        function createAnimation ( name ) {
+            var resume = document.getElementById(name);
+            var className = name + '_charactor_animation';
+            resume.innerHTML = resume.textContent.replace(/\S/g, "<span class='" + className + "'>$&</span>");
+            var domation = document.querySelectorAll('.'+ className);
+            domation.forEach((span, index) => {
+                span.style.setProperty('--delay', `${0.7-index*0.1}s`);
+            })
+        }
+        createAnimation('resume_text');
+        createAnimation('resume_adj_text');
+    </script>
+    <script type="text/javascript" src="src/js/spacing.js" defer></script>
 </html>
