@@ -169,12 +169,10 @@
 @keyframes zeroOpacityAnimation {
     0% {
         opacity: 1;
-        border: 2px solid #333;
         border-radius: 8px;
     }
     100% {
         opacity: 0;
-        border: 2px solid #333;
         border-radius: 8px;
         transform-origin: right top;
         transform: scale(.2);
@@ -1282,6 +1280,7 @@
                                 width: 100%;
                                 cursor: pointer;
                                 .into_button {
+                                    text-decoration: none;
                                     text-align: center;
                                     display: block;
                                     margin: 0 auto;
@@ -1570,8 +1569,8 @@
                         left: 5%;
                         top: 5%;
                         overflow: hidden; 
-                        // opacity: 0;
-                        // display: none;
+                        opacity: 0;
+                        display: none;
                         &::-webkit-scrollbar {
                             /*滚动条整体样式*/
                             width: 4px;
