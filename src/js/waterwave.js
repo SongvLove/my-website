@@ -146,7 +146,7 @@ function getMusicInfo(musicInfo, className, type) {
 	
 	var ele = "";
 	musicInfo.forEach( mes => {
-		 ele += "<div class='music_list_demon'><div class='music_img'><img width='120' height='120' src='" + mes.img + "' alt='" + mes.name + "'/><div class='music_type'>" + type + "<span class='music_name'>" + mes.name + "</span></div></div><audio controls style='width:260px;'><source src='src/music/" + mes.src + "' type='audio/mpeg'><embed height='50' width='100' src='src/music/" + mes.src + "'></audio></div>";
+		 ele += "<div class='music_list_demon'><div class='music_img'><img width='120' height='120' src='" + mes.img + "' alt='" + mes.name + "'/><div class='music_type'>" + type + "<span class='music_name'>" + mes.name + "</span></div></div><audio controls style='width:260px;'><source src='http://124.220.1.178:8999/music/" + mes.src + "' type='audio/mpeg'><embed height='50' width='100' src='src/music/" + mes.src + "'></audio></div>";
 	});
 		  var div = document.createElement("div");
 		  div.className ='music_playlist';
