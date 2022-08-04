@@ -193,3 +193,18 @@ function getMusicAllInfo () {
 
 getMusicAllInfo();
 //window.addEventListener("sc")
+
+
+console.log("1");
+
+ function sleep(time) {
+ 	return new Promise((resolve) => {
+ 			setTimeout( ()=> {
+ 				resolve();
+ 			},time);
+ 		}).then(() => {
+ 				console.log("2");
+ 			})
+ }
+
+ sleep(1000);

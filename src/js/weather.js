@@ -69,5 +69,25 @@ function weatherValue () {
 
 }
 
+function urlToObject() {
+    var url = 'http://www.domain.com/?user=anonymous&user=amidtlli&id=123&id=456&id=1547&city=%E5%8C%97%E4%BA%AC&enabled%27';
+    let [yumin, keyvalue] = url.split('?');
+    let keyvalueArray = keyvalue.split('&');
+    var newObject = {};
+    keyvalueArray.forEach((item) => {
+        let [key, name] = item.split('=');
+        if(name) {
+            name = decodeURIComponent(name);
+            name = /^\d+$/.test(name) ? parseFloat(name) : name;
+            if(newObject.hasOwnProperty(key)){
+                newObject[key] = [].concat(newObject[key],name);
+            }else {
+                newObject[key] = name;
+            }
+        }
+    })
+    console.log(newObject);
+}
 
+urlToObject();
 createBubbles(20);
